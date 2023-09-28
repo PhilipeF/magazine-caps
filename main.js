@@ -66,7 +66,7 @@ const catalogo = [
 
 for (const produtoCatalogo of catalogo) {
 
-    const product = `<div id="card-produto-1">
+    const product = `<div class="border-solid border-2 border-sky-500 w-48 m-2 id="${produtoCatalogo.id}">
             <img src="${produtoCatalogo.imagem}" alt="bone-1">
             <p>${produtoCatalogo.descricao}</p>
             <p>${produtoCatalogo.cor}</p>
@@ -76,5 +76,3 @@ for (const produtoCatalogo of catalogo) {
     `
     document.getElementById("container-produto").innerHTML += product
 }
-
-
