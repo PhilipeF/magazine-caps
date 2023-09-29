@@ -1,3 +1,5 @@
+import { inicializarCarrinho } from './src/menuCarrinho';
+
 const catalogo = [
     {
         id: 1,
@@ -27,7 +29,7 @@ const catalogo = [
         id: 4,
         descricao: 'BONÉ SNAPBACK THESAINT WORLDWIDE ',
         cor: 'Preto',
-        preco: 199, 
+        preco: 199,
         imagem: './assets/bone-4.jpg',
         feminino: false,
     },
@@ -43,7 +45,7 @@ const catalogo = [
         id: 6,
         descricao: 'BONÉ SNAPBACK ABA CURVA "X"',
         cor: 'Roxo',
-        preco: 219, 
+        preco: 219,
         imagem: './assets/bone-6.jpg',
         feminino: true,
     },
@@ -76,3 +78,5 @@ for (const produtoCatalogo of catalogo) {
     `
     document.getElementById("container-produto").innerHTML += product
 }
+
+inicializarCarrinho();
