@@ -1,4 +1,5 @@
 import { inicializarCarrinho } from './src/menuCarrinho';
+import { adicionarAoCarrinho } from './src/adicionarAoCarrinho'
 
 const catalogo = [
     {
@@ -96,3 +97,4 @@ for (const produtoCatalogo of catalogo) {
 }
 
 inicializarCarrinho();
+adicionarAoCarrinho();
