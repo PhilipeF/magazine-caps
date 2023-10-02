@@ -64,6 +64,22 @@ const catalogo = [
         preco: 199,
         imagem: './assets/bone-8.jpg',
         feminino: true,
+    },
+    {
+        id: 7,
+        descricao: 'BONÉ DAD HAT "THESAINT"',
+        cor: 'Preto',
+        preco: 199,
+        imagem: './assets/bone-7.jpg',
+        feminino: true,
+    },
+    {
+        id: 8,
+        descricao: 'BONÉ DAD HAT "THESAINT"',
+        cor: 'Branco',
+        preco: 199,
+        imagem: './assets/bone-8.jpg',
+        feminino: true,
     }]
 
 for (const produtoCatalogo of catalogo) {

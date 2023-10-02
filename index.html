@@ -11,8 +11,9 @@
   <title>Magizene Basketeball Cap</title>
 </head>
 
-<body>
-  <section id="carrinho" class="fixed top-0 right-0 bg-gray-600 h-screen w-[360px] text-slate-200">
+<body class="bg-zinc-300 h-full w-full">
+  <!--Carrinho-->
+  <section id="carrinho" class="fixed top-0 right-[-350px] bg-zinc-900 h-screen w-[360px] text-slate-200 z-50">
     conteudo
     <div id="cabecalho-carinho" class="flex justify-between m-4">
       <p>Meu carrinho</p>
@@ -32,20 +33,21 @@
     <button class="bg-slate-200 text-slate-900 p-2">Finalizar Compra</button>
   </section>
 
-  <header class="bg-gray-800 p-2 flex justify-between">
-    <img src="./assets/logo-bones.png" class="w-20" alt="">
+  <!--Header do Pagina-->
+  <header class="bg-zinc-900 py-4 text-xl px-8 text-white flex justify-between shadow-xl shadow-slate-500 sticky top-0">
+    <img src="./assets/logo-bones.png" class="w-20" alt="logo-marca">
     <div class="flex gap-2 items-end mx-2">
-      <button id="abrir-carrinho">
+      <button id="abrir-carrinho" class="mx-2">
         <i class="fa-solid fa-cart-shopping"></i>
       </button>
       <button>
-        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-user mr-2"></i>
       </button>
     </div>
-
   </header>
+
   <main>
-    <section class="flex flex-wrap" id="container-produto">
+    <section class="flex flex-wrap p-10 justify-center gap-10" id="container-produto">
     </section>
   </main>
   <script type="module" src="main.js"></script>
