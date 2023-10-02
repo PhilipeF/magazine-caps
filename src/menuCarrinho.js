@@ -9,7 +9,6 @@ function fecharCarrinho() {
 }
 
 export function inicializarCarrinho() {
-
   const botaoFecharCarrinho = document.getElementById('fechar-carrinho')
   const botaoAbrirCarrinho = document.getElementById('abrir-carrinho')
 
