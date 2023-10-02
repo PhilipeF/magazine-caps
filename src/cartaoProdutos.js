@@ -1,4 +1,4 @@
-import { adicionarAoCarrinho } from './adicionarAoCarrinho';
+import { adicionarAoCarrinho } from './menuCarrinho';
 import { catalogo } from './utilidades';
 
 export function renderizarCatalogo() {
@@ -6,7 +6,7 @@ export function renderizarCatalogo() {
     const product = `<div id="${produtoCatalogo.id}" class="w-48 m-2 flex flex-col p-2 justify-between shadow-lg rounded-lg" >
             <img 
                 src="${produtoCatalogo.imagem}" 
-                alt="bone-1"
+                alt="${produtoCatalogo.descricao}"
                 class="hover:scale-110 duration-300 pb-4 rounded-lg"                
             />
               <p class='text-sm'>${produtoCatalogo.descricao}</p>
@@ -22,6 +22,6 @@ export function renderizarCatalogo() {
 
   for (const produtoCatalogo of catalogo) {
     document.getElementById(`adicionar-${produtoCatalogo.id}`)
-      .addEventListener('click', adicionarAoCarrinho)
+      .addEventListener('click', () => adicionarAoCarrinho(produtoCatalogo.id))
   }
 }
