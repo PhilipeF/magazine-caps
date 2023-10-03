@@ -29,10 +29,15 @@ export function adicionarAoCarrinho(idProduto) {
         <i class="fa-sharp fa-xmark fa-solid bg-zinc-500 hover:text-zinc-900"></i>
       </button>
       <img src="${produto.imagem}" class="h-[200px] rounded-lg " alt="">
-    <div class="py-2 mx-2">
+    <div class="p-2 flex flex-col justify-between">
       <p class="text-zinc-900 text-sm">${produto.descricao}</p>
       <p class="text-zinc-800 text-xs">${produto.cor}</p>
       <p class="text-green-700 text-lg">$${produto.preco}</p>
+    </div>
+    <div class='flex text-slate-100'>
+      <button> - </button>
+        <p>2</p>      
+      <button> + </button>
     </div>
   </article>  
   `

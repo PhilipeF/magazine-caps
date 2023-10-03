@@ -1,21 +1,21 @@
 export const catalogo = [
   {
     id: 1,
-    descricao: 'BONÉ SARJA DAD HAT VARSITY - AZUL',
+    descricao: 'BONÉ SARJA DAD HAT VARSITY',
     cor: 'Azul',
     preco: 199,
     imagem: './assets/bone-1.jpg'
   },
   {
     id: 2,
-    descricao: 'BONÉ NYLON STRAPBACK FRESH - VERMELHO',
+    descricao: 'BONÉ NYLON STRAPBACK FRESH',
     cor: 'Vermelho',
     preco: 199,
     imagem: './assets/bone-2.jpg'
   },
   {
     id: 3,
-    descricao: 'BONÉ NYLON FIVE PANEL GOTHIC - PRETO',
+    descricao: 'BONÉ NYLON FIVE PANEL GOTHIC',
     cor: 'Preto',
     preco: 199,
     imagem: './assets/bone-3.jpg'
@@ -29,7 +29,7 @@ export const catalogo = [
   },
   {
     id: 5,
-    descricao: 'BONÉ DAD HAT THESAINT VINTAGE - OFFWHITE',
+    descricao: 'BONÉ DAD HAT THESAINT VINTAGE',
     cor: 'Preto e Branco',
     preco: 199,
     imagem: './assets/bone-5.jpg'
