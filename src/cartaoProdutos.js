@@ -6,7 +6,7 @@ export function renderizarCatalogo() {
 
     const product = `<div id="${produtoCatalogo.id}" class="w-48 m-2 flex flex-col p-3 justify-between shadow-lg rounded-lg" >
             <img 
-                src="${produtoCatalogo.imagem}" 
+                src="./assets/img/${produtoCatalogo.imagem}" 
                 alt="${produtoCatalogo.descricao}"
                 class="hover:scale-110 duration-300 pb-4 rounded-lg"                
             />
