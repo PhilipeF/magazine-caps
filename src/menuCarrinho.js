@@ -47,8 +47,21 @@ export function adicionarAoCarrinho(idProduto) {
 
   const containerProdutosCarrinho = document.getElementById('produtos-carrinho')
 
-  const cartaoProdutoCarrinho = `
-  <article class="flex bg-slate-100 rounded-lg p-1 relative">
+  const elementoArticle = document.createElement('article');
+
+  const articleClasses = [
+    "flex",
+    "bg-slate-100",
+    "rounded-lg",
+    "p-1",
+    "relative"
+  ];
+
+  for (const articleClass of articleClasses) {
+    elementoArticle.classList.add(articleClass)
+  }
+
+  const cartaoProdutoCarrinho = `  
       <button id="fechar-carrinho" class="absolute top-0 right-2">
         <i class="fa-sharp fa-xmark fa-solid bg-zinc-500 hover:text-zinc-900"></i>
       </button>
@@ -67,9 +80,9 @@ export function adicionarAoCarrinho(idProduto) {
         <p id='quantidade-${produto.id}' class='ml-2'> ${idsProdutoCarrinhoComQuantidade[produto.id]} </p>
       <button id='incrementar-produto-${produto.id}' class='ml-2'> + </button>
     </div>
-  </article>  
   `
-  containerProdutosCarrinho.innerHTML += cartaoProdutoCarrinho
+  elementoArticle.innerHTML = cartaoProdutoCarrinho;
+  containerProdutosCarrinho.appendChild(elementoArticle);
 
   document
     .getElementById(`decrementar-produto-${produto.id}`)
