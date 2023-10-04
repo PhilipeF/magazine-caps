@@ -25,7 +25,16 @@ function incrementarQuantidadeProduto(idProduto) {
   atualizarInformacaoQuantidade(idProduto)
 }
 
+function removerProdutoDoCarrinho(idProduto) {
+  delete idsProdutoCarrinhoComQuantidade[idProduto]
+  renderizarProdutosCarrinho(idProduto)
+}
+
 function decrementarQuantidadeProduto(idProduto) {
+  if (idsProdutoCarrinhoComQuantidade[idProduto] === 1) {
+    removerProdutoDoCarrinho(idProduto)
+    return
+  }
   idsProdutoCarrinhoComQuantidade[idProduto]--
   atualizarInformacaoQuantidade(idProduto)
 }
@@ -35,14 +44,7 @@ function atualizarInformacaoQuantidade(idProduto) {
     idsProdutoCarrinhoComQuantidade[idProduto];
 }
 
-export function adicionarAoCarrinho(idProduto) {
-  if (idProduto in idsProdutoCarrinhoComQuantidade) {
-    incrementarQuantidadeProduto(idProduto);
-    return
-  }
-
-  idsProdutoCarrinhoComQuantidade[idProduto] = 1
-
+function desenharProdutoCarrinho(idProduto) {
   const produto = catalogo.find(p => p.id === idProduto)
 
   const containerProdutosCarrinho = document.getElementById('produtos-carrinho')
@@ -62,14 +64,14 @@ export function adicionarAoCarrinho(idProduto) {
   }
 
   const cartaoProdutoCarrinho = `  
-      <button id="fechar-carrinho" class="absolute top-0 right-2">
-        <i class="fa-sharp fa-xmark fa-solid bg-zinc-500 hover:text-zinc-900"></i>
-      </button>
-      <img 
-        src="./assets/img/${produto.imagem}"   
-        alt="carrinha: ${produto.descricao}"
-        class="h-[200px] rounded-lg"
-      />
+    <button id="remover-item-${produto.id}" class="absolute top-0 right-2">
+      <i class="fa-sharp fa-xmark fa-solid bg-zinc-500 hover:text-zinc-900"></i>
+    </button>
+    <img
+      src="./assets/img/${produto.imagem}"   
+       alt="carrinha: ${produto.descricao}"
+       class="h-[200px] rounded-lg"
+    />
     <div class="p-2 flex flex-col justify-between">
       <p class="text-zinc-900 text-sm">${produto.descricao}</p>
       <p class="text-zinc-800 text-xs">${produto.cor}</p>
@@ -92,6 +94,31 @@ export function adicionarAoCarrinho(idProduto) {
     .getElementById(`incrementar-produto-${produto.id}`)
     .addEventListener('click', () => incrementarQuantidadeProduto(produto.id))
 
+  document
+    .getElementById(`remover-item-${produto.id}`)
+    .addEventListener('click', () => removerProdutoDoCarrinho(produto.id))
+}
+
+function renderizarProdutosCarrinho() {
+  const containerProdutosCarrinho = document.getElementById('produtos-carrinho');
+  containerProdutosCarrinho.innerHTML = '';
+
+  for (const idProduto in idsProdutoCarrinhoComQuantidade) {
+    desenharProdutoCarrinho(idProduto)
+  }
+}
+
+export function adicionarAoCarrinho(idProduto) {
+
+  console.log('Dicionario', idsProdutoCarrinhoComQuantidade)
+
+  if (idProduto in idsProdutoCarrinhoComQuantidade) {
+    incrementarQuantidadeProduto(idProduto);
+    return
+  }
+
+  idsProdutoCarrinhoComQuantidade[idProduto] = 1;
+  desenharProdutoCarrinho(idProduto)
 }
 
 
