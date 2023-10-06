@@ -1,4 +1,4 @@
-import { catalogo } from "./utilidades"
+import { catalogo, salvarLocalStorage } from "./utilidades"
 
 function abrirCarrinho() {
   document.getElementById("carrinho").classList.add("right-[0px]")
@@ -23,11 +23,15 @@ export function inicializarCarrinho() {
 function incrementarQuantidadeProduto(idProduto) {
   idsProdutoCarrinhoComQuantidade[idProduto]++
   atualizarInformacaoQuantidade(idProduto)
+  atualizarPrecoCarrinho()
+  salvarLocalStorage('carrinho', idsProdutoCarrinhoComQuantidade)
 }
 
 function removerProdutoDoCarrinho(idProduto) {
   delete idsProdutoCarrinhoComQuantidade[idProduto]
+  salvarLocalStorage('carrinho', idsProdutoCarrinhoComQuantidade)
   renderizarProdutosCarrinho(idProduto)
+  atualizarPrecoCarrinho()
 }
 
 function decrementarQuantidadeProduto(idProduto) {
@@ -36,7 +40,9 @@ function decrementarQuantidadeProduto(idProduto) {
     return
   }
   idsProdutoCarrinhoComQuantidade[idProduto]--
-  atualizarInformacaoQuantidade(idProduto)
+  atualizarInformacaoQuantidade(idProduto);
+  atualizarPrecoCarrinho();
+  salvarLocalStorage('carrinho', idsProdutoCarrinhoComQuantidade);
 }
 
 function atualizarInformacaoQuantidade(idProduto) {
@@ -46,6 +52,10 @@ function atualizarInformacaoQuantidade(idProduto) {
 
 function desenharProdutoCarrinho(idProduto) {
   const produto = catalogo.find(p => p.id === idProduto)
+
+  if (produto === undefined) {
+    return
+  }
 
   const containerProdutosCarrinho = document.getElementById('produtos-carrinho')
 
@@ -109,8 +119,11 @@ function renderizarProdutosCarrinho() {
 }
 
 export function adicionarAoCarrinho(idProduto) {
+  // console.log('Dicionario', idsProdutoCarrinhoComQuantidade)
 
-  console.log('Dicionario', idsProdutoCarrinhoComQuantidade)
+  if (idProduto === undefined) {
+    return
+  }
 
   if (idProduto in idsProdutoCarrinhoComQuantidade) {
     incrementarQuantidadeProduto(idProduto);
@@ -119,6 +132,21 @@ export function adicionarAoCarrinho(idProduto) {
 
   idsProdutoCarrinhoComQuantidade[idProduto] = 1;
   desenharProdutoCarrinho(idProduto)
+  atualizarPrecoCarrinho()
+}
+
+export function atualizarPrecoCarrinho() {
+  const precoCarrinho = document.getElementById("preco-total");
+  let precoTotalCarrinho = 0;
+  for (const idProdutoNoCarrinho in idsProdutoCarrinhoComQuantidade) {
+    precoTotalCarrinho +=
+      catalogo.find((p) => p.id === idProdutoNoCarrinho).preco *
+      idsProdutoCarrinhoComQuantidade[idProdutoNoCarrinho];
+  }
+
+  precoCarrinho.innerText = `Total: $${precoTotalCarrinho}`;
+
+  salvarLocalStorage('carrinho', idsProdutoCarrinhoComQuantidade)
 }
 
 

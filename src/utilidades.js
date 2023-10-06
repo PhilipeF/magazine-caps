@@ -70,3 +70,10 @@ export const catalogo = [
     imagem: 'bone-8.jpg'
   }]
 
+export function salvarLocalStorage(chave, informacao) {
+  localStorage.setItem(chave, JSON.stringify(informacao))
+}
+
+export function lerLocalStorage(chave) {
+  JSON.parse(localStorage.getItem(chave))
+}
