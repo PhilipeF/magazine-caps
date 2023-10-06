@@ -1,4 +1,4 @@
-import { catalogo, salvarLocalStorage } from "./utilidades"
+import { catalogo, salvarLocalStorage, lerLocalStorage } from "./utilidades"
 
 function abrirCarrinho() {
   document.getElementById("carrinho").classList.add("right-[0px]")
@@ -10,7 +10,7 @@ function fecharCarrinho() {
   document.getElementById("carrinho").classList.add("right-[-360px]")
 }
 
-const idsProdutoCarrinhoComQuantidade = {}
+const idsProdutoCarrinhoComQuantidade = lerLocalStorage('carrinho') ?? {};
 
 export function inicializarCarrinho() {
   const botaoFecharCarrinho = document.getElementById('fechar-carrinho')
@@ -109,7 +109,7 @@ function desenharProdutoCarrinho(idProduto) {
     .addEventListener('click', () => removerProdutoDoCarrinho(produto.id))
 }
 
-function renderizarProdutosCarrinho() {
+export function renderizarProdutosCarrinho() {
   const containerProdutosCarrinho = document.getElementById('produtos-carrinho');
   containerProdutosCarrinho.innerHTML = '';
 

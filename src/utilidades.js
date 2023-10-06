@@ -75,5 +75,5 @@ export function salvarLocalStorage(chave, informacao) {
 }
 
 export function lerLocalStorage(chave) {
-  JSON.parse(localStorage.getItem(chave))
+  return JSON.parse(localStorage.getItem(chave))
 }
