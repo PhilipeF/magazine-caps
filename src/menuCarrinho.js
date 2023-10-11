@@ -119,8 +119,6 @@ export function renderizarProdutosCarrinho() {
 }
 
 export function adicionarAoCarrinho(idProduto) {
-  // console.log('Dicionario', idsProdutoCarrinhoComQuantidade)
-
   if (idProduto === undefined) {
     return
   }
