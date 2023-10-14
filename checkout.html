@@ -24,18 +24,18 @@
       <p class="mb-5 font-bold text-center">Seus Dados</p>
       <div class="flex flex-col py-2">
         <label for="nome" class="text-sm font-bold mb-2">Nome </label>
-        <input type="text" id="nome" class="rounded-md p-2 mb-2 border-[1px] border-black"
+        <input type="text" id="nome" class="rounded-md p-2 mb-2 border-[1px] border-b-zinc-700 text-sm"
           placeholder="Digite o seu nome" required>
       </div>
       <div class="flex flex-col py-2">
         <label for="email" class="text-sm font-bold mb-2">E-mail </label>
-        <input type="email" id="email" class="rounded-md p-2 mb-2 border-[1px] border-black"
+        <input type="email" id="email" class="rounded-md p-2 mb-2 border-[1px] border-b-zinc-700 text-sm"
           placeholder="Digite o seu email" required>
       </div>
       <div class="flex flex-col py-2">
         <label for="telefone" class="text-sm font-bold mb-2">Telefone </label>
-        <input type="tel" id="telefone" class="rounded-md p-2 border-[1px] border-black" placeholder="(99)999999999"
-          required>
+        <input type="tel" id="telefone" class="rounded-md p-2 border-[1px] border-b-zinc-700 text-sm"
+          placeholder="(99)999999999" required>
       </div>
     </section>
 
@@ -44,24 +44,46 @@
       <p class="mb-5 font-bold text-center">Pagamento e Entrega</p>
       <div class="flex flex-col py-2">
         <label for="numero-cartao" class="text-sm font-bold mb-2">Numero do Cartão</label>
-        <input type="text" id="numero-cartao" class="rounded-md p-2 mb-2 border-[1px] border-black"
+        <input type="text" id="numero-cartao" class="rounded-md p-2 mb-2 border-[1px] border-b-zinc-700 text-sm"
           placeholder="1111 1111 1111 1111" required>
       </div>
 
       <div class="flex gap-2">
 
         <div class="flex flex-col py-2 w-1/2">
-          <label for="" class="text-sm font-bold mb-2">CVV</label>
-          <input type="number" id="numero-cartao" class="rounded-md p-2 mb-2 border-[1px] border-black"
+          <label for="numerocvv" class="text-sm font-bold mb-2">CVV</label>
+          <input type="number" id="numero-cartao" class="rounded-md p-2 mb-2 border-[1px] border-b-zinc-700 text-sm"
             placeholder="999" required>
         </div>
 
         <div class="flex flex-col py-2 w-1/2">
           <label for="numero-cartao" class=" text-sm font-bold mb-2">Data de Validade </label>
-          <input type="tel" id="telefone" class="rounded-md p-2 border-[1px] border-black" placeholder="99/99/9999"
-            required>
+          <input type="tel" id="telefone" class="rounded-md p-2 border-[1px] border-b-zinc-700 text-sm"
+            placeholder="99-9999" required>
         </div>
       </div>
+
+      <div class="flex flex-col py-2">
+        <label for="endereco" class="text-sm font-bold mb-2">Endereço</label>
+        <input type="text" id="nome" class="rounded-md p-2 mb-2 border-[1px] border-b-zinc-700 text-sm"
+          placeholder="Digite o seu endereço" required>
+      </div>
+
+      <div class="flex gap-2">
+
+        <div class="flex flex-col py-2 w-1/2">
+          <label for="numero-casa" class="text-sm font-bold mb-2">Número</label>
+          <input type="number" id="numero-cartao" class="rounded-md p-2 mb-2 border-[1px] border-b-zinc-700 text-sm"
+            placeholder="999" required>
+        </div>
+
+        <div class="flex flex-col py-2 w-1/2">
+          <label for="complemento" class=" text-sm font-bold mb-2">Complemento</label>
+          <input type="text" id="complemento" class="rounded-md p-2 border-[1px] border-b-zinc-700 text-sm"
+            placeholder="Complemento" required>
+        </div>
+      </div>
+
     </section>
 
     <!-- Checkout -->
