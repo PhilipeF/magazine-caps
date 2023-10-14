@@ -77,3 +77,45 @@ export function salvarLocalStorage(chave, informacao) {
 export function lerLocalStorage(chave) {
   return JSON.parse(localStorage.getItem(chave))
 }
+
+export function desenharProdutoCarrinhoSimples(idProduto, idContainerHtml, quantidadeProduto) {
+  const produto = catalogo.find(p => p.id === idProduto)
+
+  if (produto === undefined) {
+    return
+  }
+
+  const containerProdutosCarrinho = document.getElementById(idContainerHtml)
+
+  const elementoArticle = document.createElement('article');
+
+  const articleClasses = [
+    "flex",
+    "bg-slate-100",
+    "rounded-lg",
+    "p-1",
+    "relative"
+  ];
+
+  for (const articleClass of articleClasses) {
+    elementoArticle.classList.add(articleClass)
+  }
+
+  const cartaoProdutoCarrinho = `  
+    <img
+      src="./assets/img/${produto.imagem}"   
+       alt="carrinha: ${produto.descricao}"
+       class="h-[200px] rounded-lg"
+    />
+    <div class="p-2 flex flex-col justify-between">
+      <p class="text-zinc-900 text-sm">${produto.descricao}</p>
+      <p class="text-zinc-800 text-xs">${produto.cor}</p>
+      <p class="text-green-700 text-lg">$${produto.preco}</p>
+    </div>
+    <div class='flex text-zinc-900 items-end absolute bottom-0 right-2 '>
+        <p id='quantidade-${produto.id}' class='ml-2'> ${quantidadeProduto} </p>
+    </div>
+  `
+  elementoArticle.innerHTML = cartaoProdutoCarrinho;
+  containerProdutosCarrinho.appendChild(elementoArticle);
+}
