@@ -93,7 +93,8 @@ export function desenharProdutoCarrinhoSimples(idProduto, idContainerHtml, quant
     "flex",
     "bg-slate-100",
     "rounded-lg",
-    "p-1",
+    "p-2",
+    "mb-3",
     "relative"
   ];
 
