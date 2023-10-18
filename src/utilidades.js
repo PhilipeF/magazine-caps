@@ -92,9 +92,8 @@ export function desenharProdutoCarrinhoSimples(idProduto, idContainerHtml, quant
   const articleClasses = [
     "flex",
     "bg-slate-100",
-    "rounded-lg",
     "p-2",
-    "mb-3",
+    "mb-2",
     "relative"
   ];
 
