@@ -14,10 +14,10 @@ function fecharCarrinho() {
 
 function irParaCheckout() {
   console.log('Passei aqui')
-  // if (Object.keys(idsProdutoCarrinhoComQuantidade).length === 0) {
-  //   return;
-  // }
-  // window.location.href = window.location.origin + "/checkout.html";
+  if (Object.keys(idsProdutoCarrinhoComQuantidade).length === 0) {
+    return;
+  }
+  window.location.href = window.location.origin + "/checkout.html";
 }
 
 export function inicializarCarrinho() {

@@ -6,4 +6,3 @@ renderizarCatalogo();
 inicializarCarrinho();
 renderizarProdutosCarrinho();
 adicionarAoCarrinho();
-checkout();
