@@ -12,3 +12,10 @@ export function desenharProdutosCheckout() {
 }
 
 desenharProdutosCheckout();
+
+function finalizarCompra(event) {
+  event.preventDefault();
+  window.location.href = window.location.origin + "/pedidos.html";
+}
+
+document.addEventListener('submit', (evt) => finalizarCompra(evt))
