@@ -75,7 +75,7 @@ function desenharProdutoCarrinho(idProduto) {
 
   const cartaoProdutoCarrinho = `  
     <button id="remover-item-${produto.id}" class="absolute top-0 right-2">
-      <i class="fa-sharp fa-xmark fa-solid bg-zinc-500 hover:text-zinc-900"></i>
+      <i class="fa-solid fa-circle-xmark text-zinc-700 hover:text-zinc-900"></i>
     </button>
     <img
       src="./assets/img/${produto.imagem}"   
@@ -83,7 +83,7 @@ function desenharProdutoCarrinho(idProduto) {
        class="h-[200px] rounded-lg"
     />
     <div class="p-2 flex flex-col justify-between">
-      <p class="text-zinc-900 text-sm">${produto.descricao}</p>
+      <p class="text-zinc-900 mr-2 text-sm">${produto.descricao}</p>
       <p class="text-zinc-800 text-xs">${produto.cor}</p>
       <p class="text-green-700 text-lg">$${produto.preco}</p>
     </div>
