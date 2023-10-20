@@ -13,7 +13,6 @@ function fecharCarrinho() {
 }
 
 function irParaCheckout() {
-  console.log('Passei aqui')
   if (Object.keys(idsProdutoCarrinhoComQuantidade).length === 0) {
     return;
   }
@@ -154,7 +153,8 @@ export function atualizarPrecoCarrinho() {
 
   precoCarrinho.innerText = `Total: $${precoTotalCarrinho}`;
 
-  salvarLocalStorage('carrinho', idsProdutoCarrinhoComQuantidade)
+  salvarLocalStorage('carrinho', idsProdutoCarrinhoComQuantidade, precoTotalCarrinho)
+  console.log(precoTotalCarrinho)
 }
 
 

@@ -1,3 +1,4 @@
+import { atualizarPrecoCarrinho } from "./src/menuCarrinho";
 import { apagarDoLocalStorage, desenharProdutoCarrinhoSimples, lerLocalStorage, salvarLocalStorage } from "./src/utilidades";
 
 const idsProdutoCarrinhoComQuantidade = lerLocalStorage('carrinho') ?? {};
@@ -35,3 +36,5 @@ function finalizarCompra(event) {
 }
 
 document.addEventListener('submit', (evt) => finalizarCompra(evt))
+
+atualizarPrecoCarrinho()
