@@ -2,6 +2,13 @@ import { catalogo, salvarLocalStorage, lerLocalStorage } from "./utilidades"
 
 const idsProdutoCarrinhoComQuantidade = lerLocalStorage('carrinho') ?? {};
 
+export function quantidadeProdutosNoCarrinho() {
+  const qtdeProdutos = Object.keys(idsProdutoCarrinhoComQuantidade).length
+  const quantidadeProdutosNoCarrinho = document.getElementById("quantidadeDeProdutos")
+
+  quantidadeProdutosNoCarrinho.innerHTML = qtdeProdutos
+}
+
 function abrirCarrinho() {
   document.getElementById("carrinho").classList.add("right-[0px]")
   document.getElementById("carrinho").classList.remove("right-[-360px]")
@@ -41,6 +48,7 @@ function removerProdutoDoCarrinho(idProduto) {
   salvarLocalStorage('carrinho', idsProdutoCarrinhoComQuantidade)
   renderizarProdutosCarrinho(idProduto)
   atualizarPrecoCarrinho()
+  quantidadeProdutosNoCarrinho()
 }
 
 function decrementarQuantidadeProduto(idProduto) {
@@ -125,6 +133,7 @@ export function renderizarProdutosCarrinho() {
   for (const idProduto in idsProdutoCarrinhoComQuantidade) {
     desenharProdutoCarrinho(idProduto)
   }
+  quantidadeProdutosNoCarrinho()
 }
 
 export function adicionarAoCarrinho(idProduto) {
@@ -134,12 +143,14 @@ export function adicionarAoCarrinho(idProduto) {
 
   if (idProduto in idsProdutoCarrinhoComQuantidade) {
     incrementarQuantidadeProduto(idProduto);
+
     return
   }
 
   idsProdutoCarrinhoComQuantidade[idProduto] = 1;
   desenharProdutoCarrinho(idProduto)
   atualizarPrecoCarrinho()
+  quantidadeProdutosNoCarrinho()
 }
 
 export function atualizarPrecoCarrinho() {
@@ -154,7 +165,6 @@ export function atualizarPrecoCarrinho() {
   precoCarrinho.innerText = `Total: $${precoTotalCarrinho}`;
 
   salvarLocalStorage('carrinho', idsProdutoCarrinhoComQuantidade, precoTotalCarrinho)
-  console.log(precoTotalCarrinho)
 }
 
 
