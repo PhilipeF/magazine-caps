@@ -6,7 +6,11 @@ export function quantidadeProdutosNoCarrinho() {
   const qtdeProdutos = Object.keys(idsProdutoCarrinhoComQuantidade).length
   const quantidadeProdutosNoCarrinho = document.getElementById("quantidadeDeProdutos")
 
-  quantidadeProdutosNoCarrinho.innerHTML = qtdeProdutos
+  if (qtdeProdutos === 0) {
+    quantidadeProdutosNoCarrinho.classList.add('hidden');
+  } else {
+    quantidadeProdutosNoCarrinho.innerHTML = qtdeProdutos
+  }
 }
 
 function abrirCarrinho() {
@@ -23,7 +27,9 @@ function irParaCheckout() {
   if (Object.keys(idsProdutoCarrinhoComQuantidade).length === 0) {
     return;
   }
-  window.location.href = window.location.origin + "/checkout.html";
+  // window.location.href = window.location.origin + "./checkout.html";
+  window.location.href = "./checkout.html";
+
 }
 
 export function inicializarCarrinho() {
@@ -68,6 +74,7 @@ function atualizarInformacaoQuantidade(idProduto) {
 }
 
 function desenharProdutoCarrinho(idProduto) {
+  quantidadeProdutosNoCarrinho()
   const produto = catalogo.find(p => p.id === idProduto)
 
   if (produto === undefined) {
@@ -88,6 +95,8 @@ function desenharProdutoCarrinho(idProduto) {
 
   for (const articleClass of articleClasses) {
     elementoArticle.classList.add(articleClass)
+    quantidadeProdutosNoCarrinho()
+
   }
 
   const cartaoProdutoCarrinho = `  

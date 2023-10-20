@@ -32,7 +32,8 @@ function finalizarCompra(event) {
 
   salvarLocalStorage('historico', historicoPedidosAtualizados)
   apagarDoLocalStorage('carrinho')
-  window.location.href = window.location.origin + "/pedidos.html";
+  // window.location.href = window.location.origin + "/pedidos.html";
+  window.location.href = "./pedidos.html";
 }
 
 document.addEventListener('submit', (evt) => finalizarCompra(evt))
