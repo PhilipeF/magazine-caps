@@ -1,5 +1,5 @@
-import { atualizarPrecoCarrinho } from "./src/menuCarrinho";
-import { apagarDoLocalStorage, desenharProdutoCarrinhoSimples, lerLocalStorage, salvarLocalStorage } from "./src/utilidades";
+import { atualizarPrecoCarrinho } from "./menuCarrinho";
+import { apagarDoLocalStorage, desenharProdutoCarrinhoSimples, lerLocalStorage, salvarLocalStorage } from "./utilidades";
 
 const idsProdutoCarrinhoComQuantidade = lerLocalStorage('carrinho') ?? {};
 
