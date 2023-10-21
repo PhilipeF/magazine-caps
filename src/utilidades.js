@@ -122,7 +122,4 @@ export function desenharProdutoCarrinhoSimples(idProduto, idContainerHtml, quant
   `
   elementoArticle.innerHTML = cartaoProdutoCarrinho;
   containerProdutosCarrinho.appendChild(elementoArticle);
-
-  quantidadeProdutosNoCarrinho();
-
 }

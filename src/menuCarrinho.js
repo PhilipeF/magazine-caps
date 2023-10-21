@@ -28,7 +28,7 @@ function irParaCheckout() {
     return;
   }
   // window.location.href = window.location.origin + "./checkout.html";
-  window.location.href = './checkout.html'
+  window.location.href = './checkout.html';
 }
 
 export function inicializarCarrinho() {
@@ -172,7 +172,7 @@ export function atualizarPrecoCarrinho() {
 
   precoCarrinho.innerText = `Total: $${precoTotalCarrinho}`;
 
-  salvarLocalStorage('carrinho', idsProdutoCarrinhoComQuantidade, precoTotalCarrinho)
+  salvarLocalStorage('carrinho', idsProdutoCarrinhoComQuantidade)
 }
 
 
