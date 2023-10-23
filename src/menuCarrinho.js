@@ -98,12 +98,12 @@ function desenharProdutoCarrinho(idProduto) {
 
   }
 
-  const cartaoProdutoCarrinho = `  
+  const cartaoProdutoCarrinho = `
     <button id="remover-item-${produto.id}" class="absolute top-0 right-2">
       <i class="fa-solid fa-circle-xmark text-zinc-700 hover:text-zinc-900"></i>
     </button>
     <img
-      src="./assets/img/${produto.imagem}"   
+      src="./assets/img/${produto.imagem}"
        alt="carrinha: ${produto.descricao}"
        class="h-[200px] rounded-lg"
     />

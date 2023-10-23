@@ -105,9 +105,9 @@ export function desenharProdutoCarrinhoSimples(idProduto, idContainerHtml, quant
     elementoArticle.classList.add(articleClass)
   }
 
-  const cartaoProdutoCarrinho = `  
+  const cartaoProdutoCarrinho = `
     <img
-      src="./assets/img/${produto.imagem}"   
+      src="./assets/img/${produto.imagem}"
        alt="carrinha: ${produto.descricao}"
        class="h-[200px] rounded-lg"
     />

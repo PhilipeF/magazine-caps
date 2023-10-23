@@ -14,15 +14,15 @@
 <body class="bg-zinc-300 h-full w-full">
   <!--Carrinho-->
   <section id="carrinho"
-    class="fixed top-0 
-    right-[-360px] bg-zinc-900 h-screen w-[360px] border-l p-2 text-slate-200 z-50 flex flex-col justify-between duration-200 overflow-y-auto">
+    class="fixed top-0
+    right-[-360px] bg-zinc-900 h-screen w-[360px] border-l p-2 text-slate-200 z-50 flex-col flex justify-between duration-200 overflow-y-auto">
     <div id="cabecalho-carinho" class="flex justify-between">
       <p class="p-1 mt-3">Meu carrinho</p>
       <button id="fechar-carrinho" class="mt-3 p-2">
         <i class="fa-solid fa-circle-xmark"></i>
       </button>
     </div>
-    <section id="produtos-carrinho" class="h-3/5 flex flex-col gap-2 overflow-auto ">
+    <section id="produtos-carrinho" class="h-3/5 flex-col flex gap-2 overflow-auto ">
       <!-- Aqui vai ser adicionado os produtos do carrinh-->
     </section>
     <p id="preco-total" class="bg-slate-200 text-green-800 rounded-sm p-2"> Total: </p>
@@ -53,6 +53,23 @@
     <section class="flex flex-wrap p-10 justify-center gap-10" id="container-produto">
     </section>
   </main>
+  <footer class="bg-zinc-900 p-4">
+    <div class="flex justify-between fa-align-center">
+      <div>
+        <p class="text-xs text-white">Projeto desenvolvido por:
+          <a class="font-bold" href="https://philipef-dev.vercel.app/">
+            Philipe Ferreira - Desenvolvedor Web
+          </a>
+        </p>
+      </div>
+      <div>
+        <a href="https://www.linkedin.com/in/philipe-ferreira7/">
+          <i class="fa-brands fa-linkedin"></i>
+
+        </a>
+      </div>
+    </div>
+  </footer>
   <script type="module" src="main.js"></script>
 </body>
 
