@@ -20,12 +20,12 @@ Segue o link para visualização o projeto - <https://philipef.github.io/magazin
 - [x] Adicionar e remover novos produtos do carrinho
 - [x] Acrescentar e decrementar os produtos que estão no carrinho
 - [x] Calcular valor total dos produtos no carrinho
-- [x] Formulário com validações simples, porem importantes  para finalização do pedido "chekout".
+- [x] Formulário com validações simples, porém importantes  para finalização do pedido "chekout".
 - [x] Histórico de todos os pedidos finalizados com data e hora
 
 ## Tecnologias
 
-Este projeto foi desenvolvido com as seguintes tecnologias
+Este projeto foi desenvolvido com as seguintes tecnologias:
 <br>
 
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
@@ -60,7 +60,6 @@ $ npm run dev
 Este projeto está sob a licença MIT.
 
 ---
-<br>
 <div style="display: flex;">
   <a href="https://www.linkedin.com/in/philipe-ferreira7/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" style="margin-right: 2vw" target="_blank"></a>
   <a href="mailto:philipesferreiraa@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" style="margin-right: 2vw" target="_blank"></a>
