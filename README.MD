@@ -1,6 +1,5 @@
 ## Índice
 
-<br>
 <h3 align="center">
 
 [Projeto](#projeto) -
@@ -8,11 +7,12 @@
 [Tecnlogias](#tecnologias) -
 [Como executar](#como-executar) -
 </h3>
-<br>
 
 ## Projeto
 
 Este projeto pessoal foi desenvolvido como o intuito de praticar tudo que venho aprendendo ao longo deste ano em busca da fluência em JavaScript para front-end. Se trata de um modelo de uma loja virtual responsivo onde todo o layout foi feito utilizando Tailwind CSS.
+
+Segue o link para visualização o projeto - <https://philipef.github.io/magazine-caps/>
 
 ## Funcionalidades
 
@@ -21,7 +21,7 @@ Este projeto pessoal foi desenvolvido como o intuito de praticar tudo que venho 
 - [x] Acrescentar e decrementar os produtos que estão no carrinho
 - [x] Calcular valor total dos produtos no carrinho
 - [x] Formulário com validações simples, porem importantes  para finalização do pedido "chekout".
-- [x] Histórico de todos os pedidos realizados com data e hora
+- [x] Histórico de todos os pedidos finalizados com data e hora
 
 ## Tecnologias
 
