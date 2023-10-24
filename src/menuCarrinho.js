@@ -110,7 +110,7 @@ function desenharProdutoCarrinho(idProduto) {
     <div class="p-2 flex flex-col justify-between">
       <p class="text-zinc-900 mr-2 text-sm">${produto.descricao}</p>
       <p class="text-zinc-800 text-xs">${produto.cor}</p>
-      <p class="text-green-700 text-lg">$${produto.preco}</p>
+      <p class="text-green-700 text-lg">R$${produto.preco}</p>
     </div>
     <div class='flex text-zinc-900 items-end absolute bottom-0 right-2 '>
       <button id='decrementar-produto-${produto.id}'> - </button>
@@ -170,7 +170,7 @@ export function atualizarPrecoCarrinho() {
       idsProdutoCarrinhoComQuantidade[idProdutoNoCarrinho];
   }
 
-  precoCarrinho.innerText = `Total: $${precoTotalCarrinho}`;
+  precoCarrinho.innerText = `Total: ${precoTotalCarrinho.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`
 
   salvarLocalStorage('carrinho', idsProdutoCarrinhoComQuantidade)
 }
