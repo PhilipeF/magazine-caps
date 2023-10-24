@@ -98,7 +98,8 @@ export function desenharProdutoCarrinhoSimples(idProduto, idContainerHtml, quant
     "bg-slate-100",
     "p-2",
     "mb-2",
-    "relative"
+    "relative",
+    "w-80"
   ];
 
   for (const articleClass of articleClasses) {
