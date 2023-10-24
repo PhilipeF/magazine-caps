@@ -10,7 +10,7 @@
 
 ## Projeto
 
-Este projeto pessoal foi desenvolvido como o intuito de praticar tudo que venho aprendendo ao longo deste ano em busca da fluência em JavaScript para front-end. Se trata de um modelo de uma loja virtual responsivo onde todo o layout foi feito utilizando Tailwind CSS e os dados armazendos em localStorage.
+Este projeto pessoal foi desenvolvido como o intuito de praticar tudo que venho aprendendo ao longo deste ano em busca da fluência em JavaScript para front-end. Se trata de um modelo de uma loja virtual responsivo onde todo o layout foi feito utilizando Tailwind CSS e os dados armazenados em localStorage.
 
 Segue o link para visualização o projeto - <https://philipef.github.io/magazine-caps/>
 
