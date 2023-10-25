@@ -159,6 +159,9 @@ export function adicionarAoCarrinho(idProduto) {
   desenharProdutoCarrinho(idProduto)
   atualizarPrecoCarrinho()
   quantidadeProdutosNoCarrinho()
+
+  // location.reload()
+
 }
 
 export function atualizarPrecoCarrinho() {
