@@ -9,18 +9,24 @@ export function quantidadeProdutosNoCarrinho() {
   if (qtdeProdutos === 0) {
     quantidadeProdutosNoCarrinho.classList.add('hidden');
   } else {
+    quantidadeProdutosNoCarrinho.classList.remove('hidden')
     quantidadeProdutosNoCarrinho.innerHTML = qtdeProdutos
   }
 }
 
 function abrirCarrinho() {
-  document.getElementById("carrinho").classList.add("right-[0px]")
-  document.getElementById("carrinho").classList.remove("right-[-360px]")
+  const carrinho = document.getElementById("carrinho")
+
+  carrinho.classList.add("right-[0px]")
+  carrinho.classList.remove("right-[-360px]")
 }
 
 function fecharCarrinho() {
-  document.getElementById("carrinho").classList.remove("right-[0px]")
-  document.getElementById("carrinho").classList.add("right-[-360px]")
+
+  const carrinho = document.getElementById("carrinho")
+
+  carrinho.classList.remove("right-[0px]")
+  carrinho.classList.add("right-[-360px]")
 }
 
 function irParaCheckout() {
@@ -33,9 +39,13 @@ function irParaCheckout() {
 
 export function inicializarCarrinho() {
   const botaoFecharCarrinho = document.getElementById('fechar-carrinho')
+  const main = document.getElementsByTagName("main")[0]
   const botaoAbrirCarrinho = document.getElementById('abrir-carrinho')
   const botaoIrParaCheckout = document.getElementById('finalizar-compra')
 
+
+
+  main.addEventListener('click', fecharCarrinho)
   botaoFecharCarrinho.addEventListener('click', fecharCarrinho)
   botaoAbrirCarrinho.addEventListener('click', abrirCarrinho)
   botaoIrParaCheckout.addEventListener('click', irParaCheckout)

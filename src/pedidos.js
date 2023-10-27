@@ -12,10 +12,7 @@ function criarPedidoHistorico(pedidoComData) {
   <section
     id='container-pedidos-${pedidoComData.dataPedido}'>
   </section>
-  <button
-    id='apagarDoHistorico-${pedidoComData.dataPedido}'
-    class="bg-red-600 hover:bg-red-500 p-1 rounded-lg mb-4 text-sm"> Limpar todo histórico
-  </button>
+
   `;
 
   const main = document.getElementsByTagName("main")[0];
@@ -44,12 +41,15 @@ function renderizarHistoricoPedidos() {
 }
 renderizarHistoricoPedidos()
 
-function apagarTodoHistorico(pedidoComData) {
-  const botaoApagarDoHistorico = document.getElementById(`apagarDoHistorico-${pedidoComData.dataPedido}`)
-  botaoApagarDoHistorico.addEventListener('click', () => apagarDoLocalStorage('historico'))
+// function apagarTodoHistorico(pedidoComData) {
+//   const botaoApagarDoHistorico = document.getElementById(`apagarDoHistorico-${pedidoComData.dataPedido}`)
+//   botaoApagarDoHistorico.addEventListener('click', () => apagarDoLocalStorage('historico'))
 
-  // location.reload()
-}
+// }
 
-// location.reload()
+// <button
+//   id='apagarDoHistorico-${pedidoComData.dataPedido}'
+//   class="bg-red-600 hover:bg-red-500 p-1 rounded-lg mb-4 text-sm"> Limpar todo histórico
+// </button>
+
 
