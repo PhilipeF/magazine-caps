@@ -14,15 +14,24 @@ export function quantidadeProdutosNoCarrinho() {
   }
 }
 
+// function carrinhoVazio() {
+//   const qtdeProdutos = Object.keys(idsProdutoCarrinhoComQuantidade).length
+//   if (qtdeProdutos === 0) {
+//     const containerProdutosCarrinho = document.getElementById('produtos-carrinho')
+//     containerProdutosCarrinho.innerText = 'Carrinho vazio'
+//   }
+// }
+
 function abrirCarrinho() {
   const carrinho = document.getElementById("carrinho")
 
   carrinho.classList.add("right-[0px]")
   carrinho.classList.remove("right-[-360px]")
+  carrinhoVazio()
 }
 
-function fecharCarrinho() {
 
+function fecharCarrinho() {
   const carrinho = document.getElementById("carrinho")
 
   carrinho.classList.remove("right-[0px]")
@@ -39,13 +48,9 @@ function irParaCheckout() {
 
 export function inicializarCarrinho() {
   const botaoFecharCarrinho = document.getElementById('fechar-carrinho')
-  const main = document.getElementsByTagName("main")[0]
   const botaoAbrirCarrinho = document.getElementById('abrir-carrinho')
   const botaoIrParaCheckout = document.getElementById('finalizar-compra')
 
-
-
-  main.addEventListener('click', fecharCarrinho)
   botaoFecharCarrinho.addEventListener('click', fecharCarrinho)
   botaoAbrirCarrinho.addEventListener('click', abrirCarrinho)
   botaoIrParaCheckout.addEventListener('click', irParaCheckout)
@@ -64,6 +69,7 @@ function removerProdutoDoCarrinho(idProduto) {
   renderizarProdutosCarrinho(idProduto)
   atualizarPrecoCarrinho()
   quantidadeProdutosNoCarrinho()
+  carrinhoVazio()
 }
 
 function decrementarQuantidadeProduto(idProduto) {
@@ -83,12 +89,7 @@ function atualizarInformacaoQuantidade(idProduto) {
 }
 
 function desenharProdutoCarrinho(idProduto) {
-  quantidadeProdutosNoCarrinho()
   const produto = catalogo.find(p => p.id === idProduto)
-
-  if (produto === undefined) {
-    return
-  }
 
   const containerProdutosCarrinho = document.getElementById('produtos-carrinho')
 
@@ -109,24 +110,24 @@ function desenharProdutoCarrinho(idProduto) {
   }
 
   const cartaoProdutoCarrinho = `
-    <button id="remover-item-${produto.id}" class="absolute top-0 right-2">
-      <i class="fa-solid fa-circle-xmark text-zinc-700 hover:text-zinc-900"></i>
-    </button>
-    <img
-      src="./assets/img/${produto.imagem}"
-       alt="carrinha: ${produto.descricao}"
-       class="h-[200px] rounded-lg"
-    />
-    <div class="p-2 flex flex-col justify-between">
-      <p class="text-zinc-900 mr-2 text-sm">${produto.descricao}</p>
-      <p class="text-zinc-800 text-xs">${produto.cor}</p>
-      <p class="text-green-700 text-lg">R$${produto.preco}</p>
-    </div>
-    <div class='flex text-zinc-900 items-end absolute bottom-0 right-2 '>
-      <button id='decrementar-produto-${produto.id}'> - </button>
-        <p id='quantidade-${produto.id}' class='ml-2'> ${idsProdutoCarrinhoComQuantidade[produto.id]} </p>
-      <button id='incrementar-produto-${produto.id}' class='ml-2'> + </button>
-    </div>
+  <button id="remover-item-${produto.id}" class="absolute top-0 right-2">
+  <i class="fa-solid fa-circle-xmark text-zinc-700 hover:text-zinc-900"></i>
+  </button>
+  <img
+  src="./assets/img/${produto.imagem}"
+  alt="carrinha: ${produto.descricao}"
+  class="h-[200px] rounded-lg"
+  />
+  <div class="p-2 flex flex-col justify-between">
+  <p class="text-zinc-900 mr-2 text-sm">${produto.descricao}</p>
+  <p class="text-zinc-800 text-xs">${produto.cor}</p>
+  <p class="text-green-700 text-lg">R$${produto.preco}</p>
+  </div>
+  <div class='flex text-zinc-900 items-end absolute bottom-3 right-2 '>
+  <button id='decrementar-produto-${produto.id}'> - </button>
+  <p id='quantidade-${produto.id}' class='ml-2'> ${idsProdutoCarrinhoComQuantidade[produto.id]} </p>
+  <button id='incrementar-produto-${produto.id}' class='ml-2'> + </button>
+  </div>
   `
   elementoArticle.innerHTML = cartaoProdutoCarrinho;
   containerProdutosCarrinho.appendChild(elementoArticle);
@@ -142,6 +143,8 @@ function desenharProdutoCarrinho(idProduto) {
   document
     .getElementById(`remover-item-${produto.id}`)
     .addEventListener('click', () => removerProdutoDoCarrinho(produto.id))
+
+  quantidadeProdutosNoCarrinho()
 }
 
 export function renderizarProdutosCarrinho() {
@@ -155,23 +158,22 @@ export function renderizarProdutosCarrinho() {
 }
 
 export function adicionarAoCarrinho(idProduto) {
+
   if (idProduto === undefined) {
     return
   }
 
   if (idProduto in idsProdutoCarrinhoComQuantidade) {
     incrementarQuantidadeProduto(idProduto);
-
     return
   }
+
+
 
   idsProdutoCarrinhoComQuantidade[idProduto] = 1;
   desenharProdutoCarrinho(idProduto)
   atualizarPrecoCarrinho()
   quantidadeProdutosNoCarrinho()
-
-  // location.reload()
-
 }
 
 export function atualizarPrecoCarrinho() {

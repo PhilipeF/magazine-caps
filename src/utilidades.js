@@ -119,7 +119,7 @@ export function desenharProdutoCarrinhoSimples(idProduto, idContainerHtml, quant
     style: 'currency', currency: 'BRL'
   })}</p>
     </div>
-    <div class='flex text-zinc-900 items-end absolute bottom-0 right-2 '>
+    <div class='flex text-zinc-900 items-end absolute bottom-3 right-2 '>
         <p id='quantidade-${produto.id}' class='ml-2'> ${quantidadeProduto} </p>
     </div>
   `
