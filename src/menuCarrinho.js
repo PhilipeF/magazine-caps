@@ -14,13 +14,15 @@ export function quantidadeProdutosNoCarrinho() {
   }
 }
 
-// function carrinhoVazio() {
-//   const qtdeProdutos = Object.keys(idsProdutoCarrinhoComQuantidade).length
-//   if (qtdeProdutos === 0) {
-//     const containerProdutosCarrinho = document.getElementById('produtos-carrinho')
-//     containerProdutosCarrinho.innerText = 'Carrinho vazio'
-//   }
-// }
+function carrinhoVazio() {
+  const qtdeProdutos = Object.keys(idsProdutoCarrinhoComQuantidade).length
+  const containerProdutosCarrinho = document.getElementById('status-carrinho')
+  if (qtdeProdutos === 0) {
+    containerProdutosCarrinho.classList.remove('hidden')
+  } else {
+    containerProdutosCarrinho.classList.add('hidden')
+  }
+}
 
 function abrirCarrinho() {
   const carrinho = document.getElementById("carrinho")
@@ -106,7 +108,7 @@ function desenharProdutoCarrinho(idProduto) {
   for (const articleClass of articleClasses) {
     elementoArticle.classList.add(articleClass)
     quantidadeProdutosNoCarrinho()
-
+    carrinhoVazio()
   }
 
   const cartaoProdutoCarrinho = `
@@ -145,6 +147,8 @@ function desenharProdutoCarrinho(idProduto) {
     .addEventListener('click', () => removerProdutoDoCarrinho(produto.id))
 
   quantidadeProdutosNoCarrinho()
+  carrinhoVazio()
+
 }
 
 export function renderizarProdutosCarrinho() {
@@ -155,9 +159,12 @@ export function renderizarProdutosCarrinho() {
     desenharProdutoCarrinho(idProduto)
   }
   quantidadeProdutosNoCarrinho()
+  carrinhoVazio()
+
 }
 
 export function adicionarAoCarrinho(idProduto) {
+  carrinhoVazio()
 
   if (idProduto === undefined) {
     return
@@ -167,8 +174,6 @@ export function adicionarAoCarrinho(idProduto) {
     incrementarQuantidadeProduto(idProduto);
     return
   }
-
-
 
   idsProdutoCarrinhoComQuantidade[idProduto] = 1;
   desenharProdutoCarrinho(idProduto)
