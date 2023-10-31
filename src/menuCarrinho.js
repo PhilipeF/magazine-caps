@@ -148,7 +148,6 @@ function desenharProdutoCarrinho(idProduto) {
 
   quantidadeProdutosNoCarrinho()
   carrinhoVazio()
-
 }
 
 export function renderizarProdutosCarrinho() {

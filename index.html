@@ -15,22 +15,28 @@
   <!--Carrinho-->
   <section id="carrinho"
     class="fixed top-0
-    right-[-360px] bg-zinc-900 h-screen w-[360px] border-l p-2 text-slate-200 z-50 flex-col flex justify-between duration-200 overflow-y-auto">
+    right-[-360px] bg-zinc-900 h-screen  w-[360px] border-l p-2 text-slate-200 z-50 flex-col flex justify-between duration-200 overflow-y-auto">
     <div id="cabecalho-carinho" class="flex justify-between">
       <p class="p-1 mt-3">Meu carrinho</p>
       <button id="fechar-carrinho" class="mt-3 p-2">
         <i class="fa-solid fa-circle-xmark"></i>
       </button>
     </div>
-
-    <div id="status-carrinho" class="flex justify-center items-center">
+    <div id="status-carrinho" class="h-full flex justify-center text-center items-center ">
       <p class="text-red-600">Carrinho Vazio</p>
       <i class="fa-brands fa-opencart"></i>
     </div>
-    <section id="produtos-carrinho" class="h-3/5 flex-col flex gap-2 overflow-auto ">
+    <section id="produtos-carrinho" class="flex-col flex h-3/5 gap-2 overflow-auto ">
     </section>
-    <p id="preco-total" class="bg-slate-200 text-green-800 rounded-sm p-2"> Total: </p>
-    <button id="finalizar-compra" class="bg-slate-200 hover:bg-slate-50 text-slate-900 p-2">Finalizar Compra</button>
+    <div class="flex flex-col gap-2">
+      <p id="preco-total" class="bg-slate-200 text-green-800 text-center rounded-sm p-2">
+        Total:
+      </p>
+      <button id="finalizar-compra" class="bg-slate-200 hover:bg-slate-50 text-slate-900 rounded-sm p-2 mb-2">
+        Finalizar Compra
+      </button>
+    </div>
+
   </section>
   <!--Header do Pagina-->
   <header
@@ -53,7 +59,7 @@
     </div>
   </header>
   <main class="h-full">
-    <section class="flex flex-wrap p-10 justify-center gap-10 h-full" id="container-produto">
+    <section id="container-produto" class="flex flex-wrap p-10 justify-center gap-10 h-full">
     </section>
   </main>
   <footer class="bg-zinc-900 p-4 max-md:p-1">
