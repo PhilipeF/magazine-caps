@@ -2,17 +2,19 @@ import { lerLocalStorage, desenharProdutoCarrinhoSimples, apagarDoLocalStorage }
 
 function criarPedidoHistorico(pedidoComData) {
   const elementoPedido = `
-  <p
-    class="text-sm text-center text-bold mb-4">
-      ${new Date(pedidoComData.dataPedido).toLocaleDateString('pt-BR', {
+  <section id="produtosDoHistorico">
+    <p
+      class="text-sm text-center text-bold m-2">
+        ${new Date(pedidoComData.dataPedido).toLocaleDateString('pt-BR', {
     hour: '2-digit',
     minute: "2-digit"
   })}
-  </p>
-  <section
-    id='container-pedidos-${pedidoComData.dataPedido}'>
-  </section>
+    </p>
 
+    <section
+      id='container-pedidos-${pedidoComData.dataPedido}'>
+    </section>
+  </section>
   `;
 
   const main = document.getElementsByTagName("main")[0];
@@ -30,26 +32,33 @@ function criarPedidoHistorico(pedidoComData) {
 function renderizarHistoricoPedidos() {
   const historico = lerLocalStorage('historico')
 
-  if (historico.length === 0) {
+  if (!Array.isArray(historico) || historico.length === 0) {
     return
   }
 
   for (const pedidoComData of historico) {
     criarPedidoHistorico(pedidoComData)
-    apagarTodoHistorico(pedidoComData)
   }
 }
-renderizarHistoricoPedidos()
 
-// function apagarTodoHistorico(pedidoComData) {
-//   const botaoApagarDoHistorico = document.getElementById(`apagarDoHistorico-${pedidoComData.dataPedido}`)
-//   botaoApagarDoHistorico.addEventListener('click', () => apagarDoLocalStorage('historico'))
+renderizarHistoricoPedidos();
 
-// }
+function apagarDoHistorico() {
+  const historico = lerLocalStorage('historico')
+  const botaoApagarDoHistorico = document.getElementById("apagarDoHistorico")
 
-// <button
-//   id='apagarDoHistorico-${pedidoComData.dataPedido}'
-//   class="bg-red-600 hover:bg-red-500 p-1 rounded-lg mb-4 text-sm"> Limpar todo histórico
-// </button>
+  botaoApagarDoHistorico.addEventListener('click', () => {
+    if (!Array.isArray(historico) || historico.length === 0) {
+      alert('Seu histórico de pedidos está vazio. Adicione produtos para visualizá-los aqui')
+    }
+    apagarDoLocalStorage('historico');
 
+    const main = document.getElementById("produtosDoHistorico");
+    if (main) {
+      main.innerHTML = "";
+      renderizarHistoricoPedidos()
+    }
+  });
+}
 
+apagarDoHistorico();
