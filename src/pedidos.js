@@ -49,13 +49,15 @@ function apagarDoHistorico() {
 
   botaoApagarDoHistorico.addEventListener('click', () => {
     if (!Array.isArray(historico) || historico.length === 0) {
-      alert('Seu histórico de pedidos está vazio. Adicione produtos para visualizá-los aqui')
+      console.log('Passei aqui')
+      alert('Seu histórico de pedidos está vazio. Adicione produtos para visualizá-los aqui.')
     }
     apagarDoLocalStorage('historico');
+    location.reload()
 
-    const main = document.getElementById("produtosDoHistorico");
-    if (main) {
-      main.innerHTML = "";
+    const containerProdutosDoHistorico = document.getElementById("produtosDoHistorico");
+    if (containerProdutosDoHistorico) {
+      containerProdutosDoHistorico.innerHTML = "";
       renderizarHistoricoPedidos()
     }
   });
