@@ -107,7 +107,6 @@ function desenharProdutoCarrinho(idProduto) {
 
   for (const articleClass of articleClasses) {
     elementoArticle.classList.add(articleClass)
-    quantidadeProdutosNoCarrinho()
     carrinhoVazio()
   }
 
@@ -146,7 +145,6 @@ function desenharProdutoCarrinho(idProduto) {
     .getElementById(`remover-item-${produto.id}`)
     .addEventListener('click', () => removerProdutoDoCarrinho(produto.id))
 
-  quantidadeProdutosNoCarrinho()
   carrinhoVazio()
 }
 
@@ -157,7 +155,6 @@ export function renderizarProdutosCarrinho() {
   for (const idProduto in idsProdutoCarrinhoComQuantidade) {
     desenharProdutoCarrinho(idProduto)
   }
-  quantidadeProdutosNoCarrinho()
   carrinhoVazio()
 
 }
