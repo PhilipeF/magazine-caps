@@ -4,7 +4,7 @@ import { catalogo } from './utilidades';
 export function renderizarCatalogo() {
   for (const produtoCatalogo of catalogo) {
 
-    const product = `<div id="${produtoCatalogo.id}" class="w-48 m-2 flex flex-col p-3 justify-between shadow-lg rounded-lg" >
+    const product = `<div id="${produtoCatalogo.id}" class="w-48 mt-2 mb-10 flex flex-col p-3 justify-between shadow-lg rounded-lg" >
             <img
                 src="./assets/img/${produtoCatalogo.imagem}"
                 alt="${produtoCatalogo.descricao}"
