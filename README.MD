@@ -21,7 +21,7 @@ Segue o link para visualização o projeto - <https://philipef.github.io/magazin
 - [x] Acrescentar e decrementar os produtos que estão no carrinho
 - [x] Calcular valor total dos produtos no carrinho
 - [x] Formulário com validações simples, porém importantes  para finalização do pedido "chekout".
-- [x] Histórico de todos os pedidos finalizados com data e hora
+- [x] Histórico de todos os pedidos finalizados com data e horac
 
 ## Tecnologias
 
