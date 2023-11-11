@@ -5,10 +5,16 @@ const idsProdutoCarrinhoComQuantidade = lerLocalStorage('carrinho') ?? {};
 export function quantidadeProdutosNoCarrinho() {
   const qtdeProdutos = Object.keys(idsProdutoCarrinhoComQuantidade).length
   const quantidadeProdutosNoCarrinho = document.getElementById("quantidadeDeProdutos")
-
+  // Criei essa variável para não ter que ficar repetindo as classes
+  const cartSpanClasses = ['flex','items-center','text-white','text-xs','justify-center','bg-red-600','absolute','left-6','top-1/2','rounded-full','w-5','h-5'];
   if (qtdeProdutos === 0) {
+    // Usei o operador de espalhamento (...cartSpanClasses)
+    // para passar as classes como argumentos para o método remove e para 
+    // o add logo abaixo.
+    quantidadeProdutosNoCarrinho.classList.remove(...cartSpanClasses)
     quantidadeProdutosNoCarrinho.classList.add('hidden');
   } else {
+    quantidadeProdutosNoCarrinho.classList.add(...cartSpanClasses)
     quantidadeProdutosNoCarrinho.classList.remove('hidden')
     quantidadeProdutosNoCarrinho.innerHTML = qtdeProdutos
   }
