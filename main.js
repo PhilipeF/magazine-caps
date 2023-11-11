@@ -13,3 +13,5 @@ atualizarPrecoCarrinho();
 renderizarProdutosCarrinho();
 adicionarAoCarrinho();
 quantidadeProdutosNoCarrinho();
+
+
